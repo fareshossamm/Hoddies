@@ -13,7 +13,6 @@ const productsData = [
   { id: 2, name: 'Printed Tee', type: 'Print', oldPrice: 'EGP 1100', price: 'EGP 950', img: img2 },
   { id: 3, name: 'Basic Hoodie', type: 'Basic', oldPrice: 'EGP 1100', price: 'EGP 950', img: img3 },
   { id: 4, name: 'Graphic Tee', type: 'Print', oldPrice: 'EGP 1100', price: 'EGP 950', img: img4 },
-  // Add more products as needed
 ];
 
 function Products() {

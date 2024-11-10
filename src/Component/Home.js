@@ -19,7 +19,7 @@ function HeroSection() {
       
       <div className="hero-content">
         {/* Apply AOS animation for fade-in and slide-up */}
-        <h1 className="hero-title" data-aos="fade-left">
+        <h1 className="hero-title" data-aos="fade-down">
           Discover Your Perfect Hoodie with Cerca 🧥💫
         </h1>
         <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
@@ -27,7 +27,7 @@ function HeroSection() {
           our premium hoodies are designed for both boys and girls who demand quality and fashion.
           Get ready to level up your wardrobe! 🔥🧥
         </p>
-        <Link to="/products" className="products-cta-button" data-aos="fade-left" data-aos-delay="400">Shop the Collection 🛍️</Link>
+        <Link to="/products" className="products-cta-button" data-aos="fade-up" data-aos-delay="400">Shop the Collection 🛍️</Link>
 
       </div>
 
