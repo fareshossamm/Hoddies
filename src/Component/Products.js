@@ -32,7 +32,7 @@ function Products() {
       <h2 className="products-title" data-aos="fade-down">Our Collection</h2>
       
       {/* Filter Buttons */}
-      <div className="filter-buttons" data-aos="fade-right">
+      <div className="filter-buttons" data-aos="fade-up">
         {['All', 'Basic', 'Print'].map((type) => (
           <button 
             key={type} 
