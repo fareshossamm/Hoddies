@@ -1,0 +1,136 @@
+/* General styles for dark theme */
+body {
+    background-color: #1c1c1c;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2, h3 {
+    color: #fff;
+  }
+  
+  .order-summary .place {
+    width: 100%;
+    padding: 15px;
+    background-color: #e74c3c; /* Button color */
+    color: white;
+    font-size: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition:  0.6s ;
+    border: none;
+    font-weight: bold;
+    margin-top: 25px;
+  }
+  
+  
+  
+  /* Container for Order Summary */
+ .order-summary-container {
+    background-color: #1c1c1c;
+    height: 89vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 80px;
+  }
+  
+ .order-summary {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .order-summary .order-summary-left, .order-summary-right {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    padding-top: 50px;
+  }
+  
+  .order-summary  .order-summary-left h3 {
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .order-summary .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .order-summary .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .order-summary .input-group input {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+  
+  .order-summary .input-group input:focus {
+    outline: none;
+    border-color: #e74c3c;
+  }
+  
+  /* Order summary right section */
+  .order-summary .order-summary-right h2 {
+    margin-bottom: 20px;
+    color: #fff;
+
+  }
+  
+  .order-summary .product-info {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .order-summary .product-info img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .order-summary .product-info div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .order-summary .product-info p {
+    margin: 5px 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .order-summary {
+      flex-direction: column;
+    }
+  
+    .order-summary .order-summary-left, .order-summary-right {
+      width: 100%;
+    }
+  
+    .order-summary .product-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .order-summary .product-info img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  

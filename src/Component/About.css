@@ -1,0 +1,194 @@
+/* General Styles */
+.aboutus-page {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #171d1f; 
+    overflow-x: hidden;
+  }
+  
+  /* Hero Section */
+  .aboutus-hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  .aboutus-hero-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  .aboutus-hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .aboutus-explore-button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 14px 40px;
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .aboutus-explore-button:hover {
+    background-color: #e74c3c;
+    transform: scale(1.05);
+  }
+  
+  /* Brand Story Section */
+  .aboutus-story-section {
+    padding: 80px 20px;
+    background-color: #171d1f; 
+    text-align: center;
+  }
+  
+  .aboutus-story-section h2 {
+    font-size: 2.8rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 600;
+
+  }
+  
+  .aboutus-story-section p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Values Section */
+  .aboutus-values-section {
+    padding: 80px 20px;
+    background-color: #283134; 
+    text-align: center;
+  }
+  
+  .aboutus-values-section h2 {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    font-weight: 600;
+
+    margin-bottom: 40px;
+  }
+  
+  .aboutus-values-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .aboutus-value {
+    background-color: #171d1f; 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .aboutus-value h3 {
+    font-size: 1.8rem;
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-weight: 600;
+
+  }
+  
+  .aboutus-value p {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  .aboutus-value-icon {
+    font-size: 3.5rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+  }
+  
+  .aboutus-value:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Vision Section */
+  .aboutus-vision-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #171d1f; 
+    color: #fff;
+  }
+  
+  .aboutus-vision-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #e74c3c;
+    font-weight: 600;
+  }
+  
+  .aboutus-vision-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  /* Call to Action Section */
+  .aboutus-cta-section {
+    background-color: #cf2f1d; 
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .aboutus-cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+
+  }
+  
+  .aboutus-cta-section p {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .aboutus-cta-section .aboutus-explore-button {
+    background-color: #171d1f; 
+    color: #f9f7f7;
+    padding: 15px 50px;
+    font-size: 1.3rem;
+    margin-top: 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .aboutus-cta-section .aboutus-explore-button:hover {
+    background-color: #171d1f; 
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
