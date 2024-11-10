@@ -3,22 +3,21 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  color: #f4f4f4; /* Light text on dark background */
-  background-color: #1c1c1c; 
+  color: #f4f4f4;
+  background-color: #1c1c1c;
 }
 
-/* Product Details Container - Full Width */
+/* Product Details Container */
 .product-details {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Take full viewport height */
-  width: 100%; /* Full width */
-  padding: 20px; /* Adjust padding as needed */
-  box-sizing: border-box; /* Prevents padding from affecting width/height */
-  background-color: #171d1f; 
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #171d1f;
   padding-top: 100px;
-
 }
 
 /* Product Image */
@@ -41,17 +40,18 @@ body {
 .product-info {
   flex: 1.5;
   padding-left: 30px;
-  color: #f4f4f4; /* Light text color */
+  color: #f4f4f4;
 }
 
 .product-info h1.product-name {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #f4f4f4; /* Light text color */
+  color: #f4f4f4;
   margin-bottom: 15px;
   letter-spacing: 0.5px;
 }
 
+/* Price Display */
 .prices {
   display: flex;
   justify-content: flex-start;
@@ -61,18 +61,18 @@ body {
 
 .old-price {
   text-decoration: line-through;
-  color: #888; /* Light gray for old price */
+  color: #888;
   font-size: 25px;
 }
 
 .new-price {
-  color: #e74c3c; /* Red color for sale price */
+  color: #e74c3c;
   font-size: 30px;
   font-weight: 700;
   margin-top: 5px;
 }
 
-/* Actions Buttons */
+/* Action Buttons */
 .actions {
   display: flex;
   justify-content: start;
@@ -92,24 +92,21 @@ body {
 }
 
 .actions .order-whatsapp {
-  background: linear-gradient(45deg, #2ecc71, #27ae60); /* Green */
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
 }
 
 .actions .order-now {
-  background: #e74c3c; /* Blue for "Order Now" */
-}
-
-/* Button Icons */
-button i {
-  margin-right: 10px;
-  font-size: 1.4rem; /* Icon size */
+  background: #e74c3c;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .product-details {
     flex-direction: column;
-    padding: 20px;
+    padding: 100px 20px;
+    align-items: flex-start;
+    height: auto;
+
   }
 
   .product-image {
@@ -119,6 +116,7 @@ button i {
 
   .product-info {
     padding-left: 0;
+    width: 100%;
   }
 
   .product-info h1.product-name {
@@ -128,17 +126,35 @@ button i {
   .new-price {
     font-size: 1.6rem;
   }
-
+.actions{
+  flex-direction: column;
+}
   .actions button {
-    font-size: 1.1rem;
+    font-size: 18px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  /* Order Summary First, Form Underneath */
+  .product-info,
+  .order-form {
+    width: 100%;
+  }
+
+  .order-form {
+    order: 2;
+  }
+
+  .product-info {
+    order: 1;
   }
 }
 
+/* Size Selector */
 .size-selector {
   margin: 20px 0;
 }
 
-/* Buttons */
 .size-button,
 .type-button {
   padding: 10px 20px;
@@ -154,13 +170,15 @@ button i {
   background-color: #e74c3c;
   color: white;
 }
+
 /* Inputs */
-.quantity-selector input{
+.quantity-selector input {
   padding: 8px;
   width: 10%;
   border-radius: 5px;
   margin-top: 5px;
 }
+
 .color-selector input {
   padding: 8px;
   width: 50%;
@@ -173,6 +191,7 @@ button i {
   display: block;
   margin-bottom: 5px;
 }
+
 .color-button {
   width: 40px;
   height: 40px;
@@ -185,10 +204,8 @@ button i {
 .color-button.selected {
   border: 2px solid #e74c3c;
   width: 80px;
-
 }
 
 .color-button:hover {
   transform: scale(1.1);
 }
-
