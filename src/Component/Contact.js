@@ -92,7 +92,9 @@ function Contact() {
     <div className="contact-page">
       <div className="contact-container">
         <div className="contact-form">
-          <h2>Contact Us</h2>
+        <h2>Get in Touch</h2>
+<p className='contact-p'>We’d love to hear from you! Fill out the form below, and we’ll get back to you soon.</p>
+
           <form onSubmit={handleSubmit}>
             {/* Name Field */}
             <div className="form-group">

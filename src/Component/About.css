@@ -20,7 +20,14 @@
     padding: 0 20px;
     position: relative;
   }
-  
+    /* Responsive Design */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .aboutus-hero-section {
+    height: 100vh;
+    padding: 200px 20px 100px;
+  }
+  }
   .aboutus-hero-content h1 {
     font-size: 4.5rem;
     margin-bottom: 20px;
@@ -28,7 +35,13 @@
     font-weight: bold;
     color: #e74c3c;
   }
+  /* Responsive Design */
+@media (max-width: 768px) {
+  .aboutus-hero-content h1 {
+    font-size: 35px;
   
+  }
+  }
   .aboutus-hero-content p {
     font-size: 1.4rem;
     margin-bottom: 30px;
@@ -37,7 +50,17 @@
     margin-left: auto;
     margin-right: auto;
   }
-  
+    /* Responsive Design */
+@media (max-width: 768px) {
+  .aboutus-hero-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 100;
+    color: #b6b5b5;
+
+
+  }
+  }
   .aboutus-explore-button {
     background-color: #e74c3c;
     color: #fff;
@@ -48,7 +71,14 @@
     border-radius: 12px;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
-  
+  @media (max-width: 768px) {
+    .aboutus-explore-button {
+
+      font-size: 20px;
+      font-weight: bold;
+    
+    }
+    }
   .aboutus-explore-button:hover {
     background-color: #e74c3c;
     transform: scale(1.05);
@@ -68,7 +98,13 @@
     font-weight: 600;
 
   }
+  @media (max-width: 768px) {
+    .aboutus-story-section h2 {
+      font-size: 35px;
+   
   
+    }
+    }
   .aboutus-story-section p {
     font-size: 1.2rem;
     color: #666;
@@ -76,7 +112,12 @@
     max-width: 900px;
     margin: 0 auto;
   }
-  
+  @media (max-width: 768px) {
+    .aboutus-story-section p {
+      font-size: 18px;
+   
+    }
+    }
   /* Values Section */
   .aboutus-values-section {
     padding: 80px 20px;
@@ -91,7 +132,12 @@
 
     margin-bottom: 40px;
   }
-  
+  @media (max-width: 768px) {
+    .aboutus-values-section h2 {
+      font-size: 35px;
+ 
+    }
+    }
   .aboutus-values-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -114,12 +160,23 @@
     font-weight: 600;
 
   }
+  @media (max-width: 768px) {
+    .aboutus-value h3 {
+      font-size: 25px;
+     
   
+    }
+    }
   .aboutus-value p {
     font-size: 1rem;
     color: #777;
   }
-  
+  @media (max-width: 768px) {
+    .aboutus-value p {
+      font-size: 16px;
+      color: #777;
+    }
+    }
   .aboutus-value-icon {
     font-size: 3.5rem;
     color: #e74c3c;
@@ -145,14 +202,24 @@
     color: #e74c3c;
     font-weight: 600;
   }
-  
+  @media (max-width: 768px) {
+    .aboutus-vision-section h2 {
+      font-size: 35px;
+     
+    }
+    }
   .aboutus-vision-section p {
     font-size: 1.2rem;
     line-height: 1.8;
     margin: 0 auto;
     max-width: 800px;
   }
-  
+  @media (max-width: 768px) {
+    .aboutus-vision-section p {
+      font-size: 16px;
+      color: #777;
+    }
+    }
   /* Call to Action Section */
   .aboutus-cta-section {
     background-color: #cf2f1d; 
@@ -167,13 +234,22 @@
     font-weight: 600;
 
   }
-  
+  @media (max-width: 768px) {
+    .aboutus-cta-section h2{
+      font-size: 35px;
+     
+    }
+    }
   .aboutus-cta-section p {
     font-size: 1.2rem;
     margin: 0 auto;
     max-width: 800px;
   }
-  
+  @media (max-width: 768px) {
+    .aboutus-cta-section p {
+      font-size: 18px;
+    }
+    }
   .aboutus-cta-section .aboutus-explore-button {
     background-color: #171d1f; 
     color: #f9f7f7;
