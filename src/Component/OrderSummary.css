@@ -67,6 +67,8 @@ h2, h3 {
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
+  color: rgb(156, 155, 155);
+
 }
 
 .order-summary .input-group input {
