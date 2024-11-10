@@ -49,6 +49,8 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    color: #bfbcbc;
+
   }
     /* Responsive Design */
 @media (max-width: 768px) {
@@ -56,7 +58,7 @@
     font-size: 20px;
     line-height: 1.8;
     font-weight: 100;
-    color: #b6b5b5;
+    color: #bfbcbc;
 
 
   }
@@ -107,7 +109,7 @@
     }
   .aboutus-story-section p {
     font-size: 1.2rem;
-    color: #666;
+    color: #bfbcbc;
     line-height: 1.8;
     max-width: 900px;
     margin: 0 auto;
@@ -169,12 +171,12 @@
     }
   .aboutus-value p {
     font-size: 1rem;
-    color: #777;
+    color: #bfbcbc;
   }
   @media (max-width: 768px) {
     .aboutus-value p {
       font-size: 16px;
-      color: #777;
+      color: #bfbcbc;
     }
     }
   .aboutus-value-icon {
@@ -213,11 +215,12 @@
     line-height: 1.8;
     margin: 0 auto;
     max-width: 800px;
+    color: #bfbcbc;
+
   }
   @media (max-width: 768px) {
     .aboutus-vision-section p {
       font-size: 16px;
-      color: #777;
     }
     }
   /* Call to Action Section */

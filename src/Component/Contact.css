@@ -121,6 +121,10 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
+    .contact-page {
+     
+      padding-top: 100px; 
+    }
     .contact-container {
       padding:50px 20px;
     }

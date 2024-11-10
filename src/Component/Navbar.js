@@ -1,19 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logo from './IMGS/Cerca logo 0 16.png';
 
 function Navbar() {
   const location = useLocation(); // Hook to detect route changes
+  const collapseRef = useRef(null); // Ref to access the navbar collapse element
 
-  // Reset cart items or perform any other side effect on route change
+  // Reset scroll position on route change
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
-    // Reset or perform any other actions on route change
-    window.scrollTo(0, 0); // Reset the scroll position to top
-
-    // You can add other reset logic if needed
-  }, [location]); // Re-run the effect when the location changes
+  // Collapse the navbar on link click in small screens
+  const handleNavLinkClick = () => {
+    if (collapseRef.current && window.innerWidth < 992) {
+      const collapseElement = new window.bootstrap.Collapse(collapseRef.current, { toggle: false });
+      collapseElement.hide();
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -32,29 +37,28 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse" id="navbarNav" ref={collapseRef}>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/" end>
+              <NavLink className="nav-link" to="/" end onClick={handleNavLinkClick}>
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/products">
+              <NavLink className="nav-link" to="/products" onClick={handleNavLinkClick}>
                 Products
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
+              <NavLink className="nav-link" to="/about" onClick={handleNavLinkClick}>
                 About
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/contact">
+              <NavLink className="nav-link" to="/contact" onClick={handleNavLinkClick}>
                 Contact
               </NavLink>
             </li>
-           
           </ul>
         </div>
       </div>
