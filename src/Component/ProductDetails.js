@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './ProductDetails.css';
-import img1 from './IMGS/Hero.webp'; 
+import img1 from './IMGS/G3.webp'; 
 import img2 from './IMGS/p2.webp'; 
-import img3 from './IMGS/p3.webp'; 
-import img4 from './IMGS/p3.webp'; 
+import img3 from './IMGS/G5.webp'; 
+import img4 from './IMGS/p4.webp'; 
 import img5 from './IMGS/p5_1.webp'; 
-import img6 from './IMGS/P6_1.webp'; 
+import img6 from './IMGS/P6_1.webp';  
 
 const productsData = [
   { 
