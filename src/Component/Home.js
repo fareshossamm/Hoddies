@@ -1,41 +1,57 @@
 import React, { useEffect } from 'react';
-import './Home.css'; // Import CSS for styling
-import AOS from 'aos'; // Import AOS library
-import 'aos/dist/aos.css'; // Import AOS CSS for animations
+import './Home.css'; // Updated CSS file
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
+import heroImage from './IMGS/Heero.webp'; // Replace with your image path
 
-function HeroSection() {
-  // Initialize AOS
+function Hero() {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Set animation duration globally
-      easing: 'ease-in-out', // Set easing function globally
-      once: true, // Ensure animation happens only once
+      duration: 1200,
+      easing: 'ease-in-out',
+      once: true,
     });
+
+    const navbar = document.querySelector('nav');
+    const heroSection = document.querySelector('.hero-section');
+    if (navbar && heroSection) {
+      const navbarHeight = navbar.offsetHeight;
+      heroSection.style.paddingTop = `${navbarHeight}px`;
+    }
   }, []);
 
   return (
     <section className="hero-section">
-      
-      <div className="hero-content">
-        {/* Apply AOS animation for fade-in and slide-up */}
-        <h1 className="hero-title" data-aos="fade-down">
-          Discover Your Perfect Hoodie with Cerca 🧥💫
-        </h1>
-        <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-          Unmatched style. Supreme comfort. Whether you're lounging or out on an adventure,
-          our premium hoodies are designed for both boys and girls who demand quality and fashion.
-          Get ready to level up your wardrobe! 🔥🧥
-        </p>
-        <Link to="/products" className="products-cta-button" data-aos="fade-up" data-aos-delay="400">Shop the Collection 🛍️</Link>
+      {/* Geometric Shape Fixed Behind Image */}
+      <div className="background-shape"></div>
 
+      <div className="hero-container">
+        {/* Left Section */}
+        <div className="hero-left" data-aos="fade-right">
+          <h1 className="hero-title">
+            <span className="highlight">Discover</span> Cerca Hoodies
+          </h1>
+          <p className="hero-description">
+            Step into comfort and style. Cerca hoodies redefine what it means to stay cozy and fashionable. 🔥✨
+          </p>
+          <div className="hero-buttons">
+            <Link to="/products" className="hero-btn primary">
+            Shop the Collection 🛍️
+            </Link>
+
+          </div>
+        </div>
+
+        {/* Right Section */}
+        <div className="hero-right" data-aos="fade-left">
+          <div className="image-wrapper">
+            <img src={heroImage} alt="Premium Hoodie" className="hero-image" />
+          </div>
+        </div>
       </div>
-
-      
     </section>
-    
-    
   );
 }
 
-export default HeroSection;
+export default Hero;

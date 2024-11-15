@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #171d1f; 
+    background: linear-gradient(135deg, #1b1b3a, #110e24);
     overflow-x: hidden;
   }
   
@@ -33,7 +33,7 @@
     margin-bottom: 20px;
     letter-spacing: 2px;
     font-weight: bold;
-    color: #e74c3c;
+    color: #e94560;
   }
   /* Responsive Design */
 @media (max-width: 768px) {
@@ -64,7 +64,7 @@
   }
   }
   .aboutus-explore-button {
-    background-color: #e74c3c;
+    background-color: #131425;
     color: #fff;
     padding: 14px 40px;
     font-size: 1.3rem;
@@ -82,20 +82,20 @@
     }
     }
   .aboutus-explore-button:hover {
-    background-color: #e74c3c;
+    background-color: #e94560;
     transform: scale(1.05);
   }
   
   /* Brand Story Section */
   .aboutus-story-section {
     padding: 80px 20px;
-    background-color: #171d1f; 
+    background: linear-gradient(135deg, #1b1b3a, #111);
     text-align: center;
   }
   
   .aboutus-story-section h2 {
     font-size: 2.8rem;
-    color: #e74c3c;
+    color: #e94560;
     margin-bottom: 20px;
     font-weight: 600;
 
@@ -123,13 +123,13 @@
   /* Values Section */
   .aboutus-values-section {
     padding: 80px 20px;
-    background-color: #283134; 
+    background: linear-gradient(135deg, #1b1b3a, #111);
     text-align: center;
   }
   
   .aboutus-values-section h2 {
     font-size: 2.5rem;
-    color: #e74c3c;
+    color: #e94560;
     font-weight: 600;
 
     margin-bottom: 40px;
@@ -147,7 +147,7 @@
   }
   
   .aboutus-value {
-    background-color: #171d1f; 
+    background: linear-gradient(135deg, #1b1b3a, #111);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -157,7 +157,7 @@
   
   .aboutus-value h3 {
     font-size: 1.8rem;
-    color: #e74c3c;
+    color: #e94560;
     margin-bottom: 15px;
     font-weight: 600;
 
@@ -181,7 +181,7 @@
     }
   .aboutus-value-icon {
     font-size: 3.5rem;
-    color: #e74c3c;
+    color: #e94560;
     margin-bottom: 20px;
   }
   
@@ -194,14 +194,14 @@
   .aboutus-vision-section {
     padding: 80px 20px;
     text-align: center;
-    background-color: #171d1f; 
+    background: linear-gradient(135deg, #1b1b3a, #111);
     color: #fff;
   }
   
   .aboutus-vision-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #e74c3c;
+    color: #e94560;
     font-weight: 600;
   }
   @media (max-width: 768px) {
@@ -225,7 +225,7 @@
     }
   /* Call to Action Section */
   .aboutus-cta-section {
-    background-color: #cf2f1d; 
+    background-color: #e94560; 
     color: #fff;
     padding: 80px 20px;
     text-align: center;

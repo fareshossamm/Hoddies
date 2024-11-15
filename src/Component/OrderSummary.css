@@ -27,7 +27,7 @@ h2, h3 {
 
 /* Container for Order Summary */
 .order-summary-container {
-  background-color: #1c1c1c;
+  background: linear-gradient(135deg, #1b1b3a, #111);
   min-height: 89vh;
   display: flex;
   justify-content: center;
@@ -111,9 +111,7 @@ h2, h3 {
   justify-content: space-between;
 }
 
-.order-summary .product-info p {
-  margin: 5px 0;
-}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

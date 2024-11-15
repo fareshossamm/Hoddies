@@ -1,6 +1,7 @@
 /* Products Section */
 .products-section {
-    background-color: #171d1f; 
+    background: linear-gradient(135deg, #1b1b3a, #111);
+    overflow: hidden;
     color: #fff; /* White text for contrast */
     padding: 130px 20px;
     text-align: center;
@@ -10,7 +11,7 @@
 .products-title {
     font-size: 2.8rem;
     font-weight: 700;
-    color: #e74c3c; /* Highlight color */
+    color: #e94560; /* Highlight color */
     margin-bottom: 50px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -25,7 +26,7 @@
 
 .filter-buttons button {
     padding: 12px 25px;
-    background-color: #333;
+    background-color: #302e47;
     color: #fff;
     border: none;
     border-radius: 12px;
@@ -36,28 +37,28 @@
 }
 
 .filter-buttons button:hover {
-    background-color: #e74c3c; /* Highlight color on hover */
+    background-color: #e94560; /* Highlight color on hover */
     color: #ffffff;
     transform: scale(1.05);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .filter-buttons .active-filter {
-    background-color: #e74c3c;
+    background-color: #e94560;
     color: #ffffff;
 }
 
 /* Products Grid */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
 
 /* Product Card */
 .product-card {
-    background-color: #2b2b2b;
+    background-color: #26243e;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -105,7 +106,7 @@
 }
 
 .new-pric {
-    color: #e74c3c;
+    color: #e94560;
     font-size: 1.3rem;
     font-weight: 700;
 }

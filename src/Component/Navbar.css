@@ -1,7 +1,7 @@
     /* Navbar Styles */
     .navbar {
         padding: 15px 0;
-        background-color: #1b2629 !important; 
+        background: linear-gradient(135deg, #1b1b3a, #111) !important; 
 
         
     }
@@ -24,7 +24,7 @@
     }
     
     .navbar-nav .nav-item .nav-link:hover {
-        color: #e74c3c !important;
+        color: #e94560 !important;
         transition: all 0.3s ease;
     }
     
@@ -36,7 +36,7 @@
     
     .navbar-nav .nav-item .nav-link.active {
         font-weight: bold;
-        color: #e74c3c !important;
+        color: #e94560 !important;
     }
     
     .navbar-nav .nav-item.cart-item {
@@ -48,21 +48,7 @@
         color: #fff;
     }
     
-    /* Cart badge styling */
-    .cart-badge {
-        position: absolute;
-        top: -8px;
-        right: -8px;
-        background-color: red;
-        color: white;
-        border-radius: 50%;
-        padding: 2px 6px;
-        font-size: 0.7rem;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+   
     .navbar-toggler {
         border: none;
         box-shadow: none !important; /* Remove box shadow */

@@ -1,120 +1,269 @@
-/* Home.css */
+/* General Reset */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
 
-/* Hero Section */
 .hero-section {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 120vh; /* Full screen height */
-  background-color: #171d1f; 
+  background: linear-gradient(135deg, #1b1b3a, #111);
+  overflow: hidden;
+  padding: 0 2rem;
   color: white;
-  text-align: center;
-  padding: 0 20px;
 }
 
-.hero-content {
-  max-width: 950px;
-  padding: 10px;
-  z-index: 1;
+/* Modern Fluid Wave Shape Behind Image */
+.background-shape {
+  position: absolute;
+  top: 60%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: #ff4081;
+  clip-path: polygon(10% 10%, 80% 20%, 90% 60%, 60% 80%, 20% 60%);
+  z-index: 0;
+  animation: moveShape 15s infinite ease-in-out; /* Infinite animation for background shape */
 }
 
-/* Hero Title */
+/* Hero Container */
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+  flex-direction: row;
+}
+
+/* Left Section */
+.hero-left {
+  flex: 1;
+  padding: 2rem;
+}
+
 .hero-title {
-  font-size: 45px; /* Larger title for more impact */
-  font-weight: 700; /* Bold title */
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #e74c3c; 
+  font-size: 4rem;
+  font-weight: 800;
   line-height: 1.2;
+  color: #fff;
+  text-shadow: 2px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.5rem;
 }
 
-/* Hero Subtitle */
-.hero-subtitle {
-  font-size: 22px; 
-  font-weight: 400;
-  margin-bottom: 40px;
-  opacity: 0.9;
-  line-height: 1.6;
-  color: #e1e1e1; /* Light text for readability on dark background */
+.hero-title .highlight {
+  background: linear-gradient(90deg, #e94560, #ff6a95);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Call to Action (CTA) Button */
-.products-cta-button {
-  padding: 18px 45px;
-  background-color: #e74c3c; 
-  color: white; /* Dark text color */
-  font-size: 1.4em;
-  font-weight: bold;
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
   border-radius: 12px;
-  text-decoration: none;
-  transition: 0.6s;
   text-transform: uppercase;
+  border: none;
+  text-decoration: none;
   display: inline-block;
-  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: #e94560;
+  color: #fff;
 }
 
-.cta-button:hover {
-  background-color: #ffffff; 
-  color: #e74c3c;
+.hero-btn:hover {
+  background-color: #ff6a95;
+  transform: scale(1.05);
 }
 
-/* Overlay effect */
-.hero-section::before {
-  content: '';
+/* Right Section */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+}
+
+.hero-image {
+  width: 70%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  animation: moveImage 10s infinite linear; /* Infinite image animation */
+}
+
+.hero-image-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-section {
-      height: 100vh;
-      padding: 120px 20px;
+.hero-image:hover .hero-image-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left {
+    padding: 1rem;
   }
 
   .hero-title {
-      font-size: 35px; /* Smaller title */
-      margin-bottom: 15px;
+    font-size: 3rem;
   }
 
-  .hero-subtitle {
-      font-size: 18px; /* Smaller subtitle */
-      line-height: 1.6;
-    }
+  .hero-description {
+    font-size: 1.2rem;
+  }
 
-  .products-cta-button{
-      font-size: 20px;
-      padding: 15px 35px;
-      width: 100%; /* Button becomes full width on small screens */
-      text-align: center;
-      margin-top: 0px;
-    
+  .hero-right {
+    margin-top: 2rem;
+  }
+
+  .image-wrapper {
+    width: 80%;
+  }
+
+  .hero-image {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .hero-right {
+    order: -1;
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .hero-image-overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+  }
+
+  .overlay-content {
+    font-size: 1.2rem;
+  }
+  .background-shape {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 550px;
+    background: #ff4081;
+    clip-path: polygon(10% 10%, 80% 20%, 90% 60%, 60% 80%, 20% 60%);
+    z-index: 0;
+    animation: moveShape 15s infinite ease-in-out; /* Infinite animation for background shape */
   }
 }
 
 @media (max-width: 480px) {
-  .hero-section {
-      padding: 40px 15px;
-  }
-
   .hero-title {
-      font-size: 30px; /* Further reduce title size on very small screens */
-      margin-bottom: 12px;
+    font-size: 2rem;
   }
 
-  .hero-subtitle {
-      font-size: 16px; /* Further reduce subtitle size */
-      line-height: 1.6;
-      color: #b0b0b0;
+  .hero-description {
+    font-size: 0.9rem;
   }
+}
 
-  .cta-button {
-      font-size: 1.1em;
-      padding: 12px 30px;
+/* Animations */
+@keyframes moveShape {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes moveImage {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

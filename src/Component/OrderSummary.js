@@ -9,7 +9,7 @@ function OrderSummary() {
   const navigate = useNavigate();
 
   // Retrieve data passed from the previous page (product details)
-  const { product, selectedSize, selectedColor } = location.state || {};
+  const { product, selectedSize, selectedColor, quantity } = location.state || {};
 
   // Handle user input for name, phone, and address
   const [userData, setUserData] = useState({ name: '', phone: '', address: '' });
@@ -43,7 +43,7 @@ function OrderSummary() {
       product_name: product.name,
       price: product.price,
       size: selectedSize || 'Not specified',
-      color: selectedColor || 'Not specified',
+      color: selectedColor || 'Not specified',  // Ensure the color is passed here
       customer_name: userData.name,
       customer_phone: userData.phone,
       customer_address: userData.address,
@@ -136,7 +136,7 @@ function OrderSummary() {
             <img src={product.img} alt={product.name} />
             <div>
               <h3>{product.name}</h3>
-              <p>Size: {selectedSize || 'Not specified'}</p>
+              <p>Size: {Array.isArray(selectedSize) ? selectedSize.join(', ') : selectedSize || 'Not specified'}</p>
               <p>Color: {selectedColor || 'Not specified'}</p>
               <p>Price: {product.price}</p>
             </div>

@@ -2,48 +2,64 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './ProductDetails.css';
-import img1 from './IMGS/black2.webp';
+import img1 from './IMGS/Hero.webp'; 
+import img2 from './IMGS/p2.webp'; 
+import img3 from './IMGS/p3.webp'; 
+import img4 from './IMGS/p3.webp'; 
+import img5 from './IMGS/p5_1.webp'; 
+import img6 from './IMGS/P6_1.webp'; 
 
 const productsData = [
   { 
     id: 1, 
-    name: 'Basic T-Shirt', 
-    type: 'Basic', 
-    oldPrice: '$1100', 
-    price: '$950', 
+    name: 'Cerca Starlight', 
+    type: 'Print', 
+    oldPrice: 'EGP 1100', 
+    price: 'EGP 950', 
     img: img1, 
-    additionalImgs: [img1],
     availableColors: ['black', 'pink', 'babyblue'], 
   },
   { 
     id: 2, 
-    name: 'Printed Tee', 
+    name: 'Starry Night', 
     type: 'Print', 
-    oldPrice: '$1100', 
-    price: '$950', 
-    img: img1, 
-    additionalImgs: [img1],
+    oldPrice: 'EGP 1100', 
+    price: 'EGP 950', 
+    img: img2, 
     availableColors: ['black', 'pink', 'babyblue'], 
   },
   { 
     id: 3, 
-    name: 'Basic Hoodie', 
-    type: 'Basic', 
-    oldPrice: '$1100', 
-    price: '$950', 
-    img: img1, 
-    additionalImgs: [img1],
+    name: 'Cerca White Lines', 
+    type: 'Print', 
+    oldPrice: 'EGP 1100', 
+    price: 'EGP 950', 
+    img: img3, 
     availableColors: ['black', 'pink', 'babyblue'], 
   },
   { 
     id: 4, 
-    name: 'Graphic Tee', 
-    type: 'Print', 
-    oldPrice: '$1100', 
-    price: '$950', 
-    img: img1, 
-    additionalImgs: [img1],
-    availableColors: ['black', 'pink', 'babyblue'], 
+    name: 'Simple Edge', 
+    type: 'Basic', 
+    oldPrice: 'EGP 1000', 
+    price: 'EGP 850', 
+    img: img4, 
+  },
+  { 
+    id: 5, 
+    name: 'Simple Edge', 
+    type: 'Basic', 
+    oldPrice: 'EGP 1000', 
+    price: 'EGP 850', 
+    img: img5, 
+  },
+  { 
+    id: 6, 
+    name: 'Simple Edge', 
+    type: 'Basic', 
+    oldPrice: 'EGP 1000', 
+    price: 'EGP 850', 
+    img: img6, 
   },
 ];
 
@@ -53,7 +69,8 @@ function ProductDetails() {
   const [product, setProduct] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState('');
-  const [sizeColorSelections, setSizeColorSelections] = useState([]);
+  const [sizeInputs, setSizeInputs] = useState([]);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const selectedProduct = productsData.find(product => product.id === parseInt(id));
@@ -62,72 +79,87 @@ function ProductDetails() {
 
   if (!product) return <div className="loading">Loading...</div>;
 
-  // Handle size selection
   const handleSizeSelection = (size) => {
     setSelectedSize(size);
   };
 
-  // Handle color selection
-  const handleColorSelection = (color) => {
-    setSelectedColor(color);
+  const handleQuantityChange = (event) => {
+    const newQuantity = Math.max(1, parseInt(event.target.value || '1', 10));
+    setQuantity(newQuantity);
+
+    if (newQuantity > 1) {
+      setSizeInputs(new Array(newQuantity).fill(''));
+    } else {
+      setSizeInputs([]);
+    }
   };
 
-  // Order validation and handling
-  const handleOrderNow = () => {
-    // Check if both size and color are selected
-    if (!selectedSize || !selectedColor) {
-      Swal.fire({
-        title: 'Selection Missing!',
-        text: 'Please select both size and color before ordering.',
-        icon: 'error',
-        confirmButtonText: 'OK',
-        confirmButtonColor: '#e74c3c',
-      });
-      return;
+  const validateSelections = () => {
+    if (product.name === 'Simple Edge') {
+      // Validate size and color selection for 'Simple Edge'
+      if (!selectedSize || !selectedColor) {
+        Swal.fire({
+          title: 'Selection Missing!',
+          text: 'Please select both size and color before proceeding.',
+          icon: 'error',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#e74c3c',
+        });
+        return false;
+      }
+    } else {
+      // For other products, validate size selection
+      if (quantity > 1) {
+        if (sizeInputs.some(size => !size)) {
+          Swal.fire({
+            title: 'Selection Missing!',
+            text: 'Please select a size for each hoodie before proceeding.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#e74c3c',
+          });
+          return false;
+        }
+      } else if (!selectedSize) {
+        Swal.fire({
+          title: 'Selection Missing!',
+          text: 'Please select a size before proceeding.',
+          icon: 'error',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#e74c3c',
+        });
+        return false;
+      }
     }
 
-    // Add size and color to sizeColorSelections
-    setSizeColorSelections([{ size: selectedSize, color: selectedColor }]);
+    return true;
+  };
 
-    // Navigate to Order Summary Page and pass the product details along with size, color
+  const handleOrderNow = () => {
+    if (!validateSelections()) return;
+
+    // Ensure selectedColor is passed to the Order Summary
     navigate('/order-summary', { 
       state: { 
         product, 
-        selectedSize, 
-        selectedColor 
+        selectedSize: quantity > 1 ? sizeInputs : selectedSize, 
+        selectedColor,  // Make sure the selected color is included here
+        quantity 
       } 
     });
   };
 
-  // Generate WhatsApp message
-  const generateWhatsAppMessage = () => {
-    let message = `Product: ${product.name}\n Price: ${product.price}\n Size: ${selectedSize}\n Color: ${selectedColor}`;
-    sizeColorSelections.forEach((selection, index) => {
-      message += `\nSize: ${selection.size}, Color: ${selection.color}`;
-    });
-    return message;
-  };
-
-  // WhatsApp Order URL
   const handleOrderOnWhatsApp = () => {
-    // Check if both size and color are selected
-    if (!selectedSize || !selectedColor) {
-      Swal.fire({
-        title: 'Selection Missing!',
-        text: 'Please select both size and color before placing an order on WhatsApp.',
-        icon: 'error',
-        confirmButtonText: 'OK',
-        confirmButtonColor: '#e74c3c',
-      });
-      return;
-    }
+    if (!validateSelections()) return;
 
-    // Add the selected size and color to the sizeColorSelections
-    setSizeColorSelections([{ size: selectedSize, color: selectedColor }]);
-
-    const phoneNumber = '+201201728706';
-    const message = generateWhatsAppMessage();
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const message = `Product: ${product.name}\nPrice: ${product.price}\nQuantity: ${quantity}`;
+    const sizeDetails = quantity > 1 
+      ? sizeInputs.map((size, i) => `Hoodie ${i + 1}: ${size}`).join('\n') 
+      : `Size: ${selectedSize}`;
+    const colorDetails = product.name === 'Simple Edge' ? `\nColor: ${selectedColor}` : '';
+    
+    const whatsappMessage = `${message}${colorDetails}\n${sizeDetails}`;
+    const url = `https://wa.me/+201201728706?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(url, '_blank');
   };
 
@@ -143,41 +175,46 @@ function ProductDetails() {
           <p className="new-price">{product.price}</p>
         </div>
 
-        {/* Size selection */}
         <div className="size-selector">
-          <div className="size-buttons">
-            {['S', 'M', 'L'].map((size) => (
-              <button
-                key={size}
-                className={`size-button ${selectedSize === size ? 'selected' : ''}`}
-                onClick={() => handleSizeSelection(size)}
-              >
-                {size}
-              </button>
-            ))}
-          </div>
+          <h3>Select Size:</h3>
+          {['S', 'M', 'L'].map(size => (
+            <button
+              key={size}
+              className={`size-button ${selectedSize === size ? 'selected' : ''}`}
+              onClick={() => handleSizeSelection(size)}
+            >
+              {size}
+            </button>
+          ))}
         </div>
 
-        {/* Color selection */}
-        <div className="color-selector">
-          <label>Select Color:</label>
-          <div className="color-buttons">
-            {['black', 'pink', 'lightskyblue'].map((colorOption) => (
+        {product.name === 'Simple Edge' && (
+          <div className="color-selector">
+            <h3>Select Color:</h3>
+            {['black', 'pink', 'lightskyblue'].map(color => (
               <button
-                key={colorOption}
-                className={`color-button ${selectedColor === colorOption ? 'selected' : ''}`}
-                style={{ backgroundColor: colorOption }}
-                onClick={() => handleColorSelection(colorOption)}
-              >
-                {/* Display color as background */}
-              </button>
+                key={color}
+                className={`color-button ${selectedColor === color ? 'selected' : ''}`}
+                style={{ backgroundColor: color }}
+                onClick={() => setSelectedColor(color)}
+              />
             ))}
           </div>
+        )}
+
+        <div className="quantity-selector">
+          <h3>Quantity:</h3>
+          <input
+            type="number"
+            value={quantity}
+            onChange={handleQuantityChange}
+            min="1"
+          />
         </div>
 
         <div className="actions">
-          <button className="order-now" onClick={handleOrderNow}>Order Now</button>
-          <button className="order-whatsapp" onClick={handleOrderOnWhatsApp}>Order on WhatsApp</button>
+          <button className='order-now' onClick={handleOrderNow}>Order Now</button>
+          <button className='order-whatsapp' onClick={handleOrderOnWhatsApp}>Order on WhatsApp</button>
         </div>
       </div>
     </div>
