@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Contact.css';
-import { FaInstagram, FaWhatsapp, FaTiktok, FaPhone } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
+import { FaInstagram, FaWhatsapp, FaTiktok, FaPhone } from 'react-icons/fa';
 
 function Contact() {
   const [name, setName] = useState('');
@@ -92,8 +92,8 @@ function Contact() {
     <div className="contact-page">
       <div className="contact-container">
         <div className="contact-form">
-        <h2>Get in Touch</h2>
-<p className='contact-p'>We’d love to hear from you! Fill out the form below, and we’ll get back to you soon.</p>
+          <h2>Get in Touch</h2>
+          <p className='contact-p'>We’d love to hear from you! Fill out the form below, and we’ll get back to you soon.</p>
 
           <form onSubmit={handleSubmit}>
             {/* Name Field */}
@@ -142,13 +142,13 @@ function Contact() {
             <p><FaPhone size={20} color="#4CAF50" /> +20 120 172 8706</p>
           </div>
           <div className="social-icons">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="instagram">
+            <a href="https://www.instagram.com/cerca.eg?igsh=cG12dHhsY2pmNXhs" target="_blank" rel="noopener noreferrer" className="instagram">
               <FaInstagram size={30} />
             </a>
-            <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer" className="whatsapp">
+            <a href="https://wa.me/201201728706" target="_blank" rel="noopener noreferrer" className="whatsapp">
               <FaWhatsapp size={30} />
             </a>
-            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="tiktok">
+            <a href="https://www.tiktok.com/@cerca.eg?_t=8rQV298qky7&_r=1" target="_blank" rel="noopener noreferrer" className="tiktok">
               <FaTiktok size={30} />
             </a>
           </div>
