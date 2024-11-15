@@ -202,7 +202,7 @@ function ProductDetails() {
           </div>
         )}
 
-        <div className="quantity-selector">
+        <div className="quantity-selector1">
           <h3>Quantity:</h3>
           <input
             type="number"

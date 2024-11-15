@@ -170,20 +170,22 @@ body {
   background-color: #ff6a95;
   color: white;
 }
-.size-input input{
-  padding: 8px;
+
+/* Inputs */
+.quantity-selector1 input {
+  padding: 12px;
   width: 20%;
   border-radius: 5px;
   margin-top: 5px;
 }
-/* Inputs */
-.quantity-selector input {
-  padding: 8px;
-  width: 10%;
-  border-radius: 5px;
-  margin-top: 5px;
+@media (max-width:768px){
+  .quantity-selector1 input {
+    padding: 12px;
+    width: 50%;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
 }
-
 .color-selector input {
   padding: 8px;
   width: 50%;
