@@ -25,7 +25,7 @@ function Hero() {
       {/* Hero Content */}
       <div className="hero-content" data-aos="fade-up">
         <h1 className="hero-title">
-          <span className="highlight">Get</span> 20% OFF Your First Order!
+          <span className="highlight">Get</span> 20% OFF Your Order!
         </h1>
         <p className="hero-description">
           Don't miss out on this exclusive offer! Upgrade your wardrobe with the trendiest hoodies. 
