@@ -1,0 +1,91 @@
+/* Dark Theme Styling */
+body{
+    background-color: #191529;
+}
+.discount-banner.dark-theme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1c1c1c;
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+  }
+
+  .banner-content {
+    max-width: 50%;
+  }
+  
+  .banner-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .banner-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+ .banner-content .highlight {
+    font-weight: bold;
+    color: #ff6a95;
+    font-size: 1.5rem;
+  }
+  
+  .cta-button {
+    background: #ff6a95;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 34, 122, 0.7);
+  }
+  
+  .banner-image svg {
+    animation: bounce 4s infinite ease-in-out;
+    width: 300px;
+    height: 300px;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .discount-banner.dark-theme {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .banner-content {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .banner-image svg {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  

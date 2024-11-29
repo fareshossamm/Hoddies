@@ -7,6 +7,7 @@ import ProductDetails from './Component/ProductDetails';
 import About from './Component/About';
 import Contact from './Component/Contact';
 import OrderSummary from './Component/OrderSummary';
+import DiscountBanner from './Component/DiscountBanner';
 
 // Component to handle page reset on route change
 const ScrollToTop = () => {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/" element={
           <>
             <Home />
+            <DiscountBanner />
             <Products />
           </>
         } />

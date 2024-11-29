@@ -11,12 +11,12 @@ import img5 from './IMGS/p5_1.webp';
 import img6 from './IMGS/P6_1.webp'; 
 
 const productsData = [
-  { id: 1, name: 'Cerca Starlight', type: 'Print', oldPrice: 'EGP 1100', price: 'EGP 950', img: img1 },
-  { id: 2, name: 'Starry Night', type: 'Print', oldPrice: 'EGP 1100', price: 'EGP 950', img: img2 },
-  { id: 3, name: 'Cerca White Lines', type: 'Print', oldPrice: 'EGP 1100', price: 'EGP 950', img: img3 },
-  { id: 4, name: 'Simple Edge', type: 'Basic', oldPrice: 'EGP 1000', price: 'EGP 850', img: img4 },
-  { id: 5, name: 'Simple Edge', type: 'Basic', oldPrice: 'EGP 1000', price: 'EGP 850', img: img5 },
-  { id: 6, name: 'Simple Edge', type: 'Basic', oldPrice: 'EGP 1000', price: 'EGP 850', img: img6 },
+  { id: 1, name: 'Cerca Starlight', type: 'Print', oldPrice: 'EGP 1100', price: 'EGP 899', img: img1 },
+  { id: 2, name: 'Starry Night', type: 'Print', oldPrice: 'EGP 1100', price: 'EGP 899', img: img2 },
+  { id: 3, name: 'Cerca White Lines', type: 'Print', oldPrice: 'EGP 1100', price: 'EGP 899', img: img3 },
+  { id: 4, name: 'Simple Edge', type: 'Basic', oldPrice: 'EGP 1000', price: 'EGP 799', img: img4 },
+  { id: 5, name: 'Simple Edge', type: 'Basic', oldPrice: 'EGP 1000', price: 'EGP 799', img: img5 },
+  { id: 6, name: 'Simple Edge', type: 'Basic', oldPrice: 'EGP 1000', price: 'EGP 799', img: img6 },
 ];
 
 function Products() {
