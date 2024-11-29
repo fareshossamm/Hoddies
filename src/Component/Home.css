@@ -1,269 +1,134 @@
-/* General Reset */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-}
-
+/* Hero Section Styling */
 .hero-section {
   position: relative;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1b1b3a, #111);
-  overflow: hidden;
-  padding: 0 2rem;
-  color: white;
-}
-
-/* Modern Fluid Wave Shape Behind Image */
-.background-shape {
-  position: absolute;
-  top: 60%;
-  left: 65%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: #ff4081;
-  clip-path: polygon(10% 10%, 80% 20%, 90% 60%, 60% 80%, 20% 60%);
-  z-index: 0;
-  animation: moveShape 15s infinite ease-in-out; /* Infinite animation for background shape */
-}
-
-/* Hero Container */
-.hero-container {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  position: relative;
-  z-index: 2;
-  flex-direction: row;
+  text-align: center;
+  background-color: #191529;  /* Dark background */
+  color: white;  /* Light text color for contrast */
+  padding-top: 100px;  /* Adjust based on navbar height */
+  height: 100vh;  /* Full viewport height */
+  overflow: hidden;
 }
 
-/* Left Section */
-.hero-left {
-  flex: 1;
-  padding: 2rem;
+/* Hero Content Styling */
+.hero-content {
+  max-width: 900px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0);  /* Darker semi-transparent background */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.5s ease-out;
 }
 
+/* Hero Title Styling */
 .hero-title {
-  font-size: 4rem;
-  font-weight: 800;
-  line-height: 1.2;
-  color: #fff;
-  text-shadow: 2px 4px rgba(0, 0, 0, 0.4);
-  margin-bottom: 1.5rem;
+  font-size: 55px;  /* Make the font size responsive */
+  font-weight: bold;
+  color: #ff4081;  /* Bright accent color */
+  margin-bottom: 20px;
 }
 
-.hero-title .highlight {
-  background: linear-gradient(90deg, #e94560, #ff6a95);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.highlight {
+  color: #ff4081;
 }
 
+/* Hero Description Styling */
 .hero-description {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 25px;  /* Responsive font size for description */
+  color: #bbb;  /* Lighter color for description */
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
+/* Button Styling */
 .hero-buttons {
-  display: flex;
-  gap: 1rem;
+  margin-top: 20px;
 }
 
 .hero-btn {
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 12px;
-  text-transform: uppercase;
-  border: none;
+  padding: 15px 30px;
+  background-color: #ff4081;  /* Bright accent color */
+  color: white;
   text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  background-color: #e94560;
-  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
 }
 
 .hero-btn:hover {
-  background-color: #ff6a95;
+  background-color: #e3396e;  /* Slightly darker shade */
   transform: scale(1.05);
 }
 
-/* Right Section */
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.image-wrapper {
-  position: relative;
-  width: 90%;
-  max-width: 500px;
-}
-
-.hero-image {
-  width: 70%;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  transition: all 0.3s ease;
-  animation: moveImage 10s infinite linear; /* Infinite image animation */
-}
-
-.hero-image-overlay {
+/* Discount Badge Styling */
+.discount-badge {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;  /* Positioned behind the text */
 }
 
-.hero-image:hover .hero-image-overlay {
-  opacity: 1;
+.discount-badge svg {
+  width: 30vw;  /* Make SVG responsive */
+  height: 30vw;  /* Make SVG responsive */
+  animation: zoomIn 1.5s ease-in-out;
 }
 
-.overlay-content {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-align: center;
+.discount-badge text {
+  fill: #fff;
+  font-size: 4vw;  /* Make the text size responsive */
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
+/* Keyframe Animation for Fade-In */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
   }
-
-  .hero-left {
-    padding: 1rem;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
+/* Keyframe Animation for Zoom-In Effect */
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Media Queries for Extra Small Screens */
+@media (max-width: 600px) {
   .hero-title {
-    font-size: 3rem;
+    font-size: 8vw;  /* Make the title smaller on small screens */
   }
 
   .hero-description {
-    font-size: 1.2rem;
-  }
-
-  .hero-right {
-    margin-top: 2rem;
-  }
-
-  .image-wrapper {
-    width: 80%;
-  }
-
-  .hero-image {
-    width: 90%;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 0.5rem;
+    font-size: 4vw;  /* Make the description text smaller */
   }
 
   .hero-btn {
-    font-size: 1rem;
-    padding: 0.8rem 2rem;
+    font-size: 1rem;  /* Adjust button text size */
   }
 
-  .hero-right {
-    order: -1;
-    width: 100%;
+  .discount-badge svg {
+    width: 40vw;  /* Make the SVG larger for small screens */
+    height: 40vw;
   }
 
-  .hero-image {
-    width: 100%;
-    border-radius: 0;
-  }
-
-  .hero-image-overlay {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.7;
-  }
-
-  .overlay-content {
-    font-size: 1.2rem;
-  }
-  .background-shape {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 450px;
-    height: 550px;
-    background: #ff4081;
-    clip-path: polygon(10% 10%, 80% 20%, 90% 60%, 60% 80%, 20% 60%);
-    z-index: 0;
-    animation: moveShape 15s infinite ease-in-out; /* Infinite animation for background shape */
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-description {
-    font-size: 0.9rem;
-  }
-}
-
-/* Animations */
-@keyframes moveShape {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  50% {
-    transform: translate(-50%, -50%) rotate(180deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-@keyframes moveImage {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-10%);
-  }
-  100% {
-    transform: translateX(0);
+  .discount-badge text {
+    font-size: 6vw;  /* Adjust text size for smaller screens */
   }
 }

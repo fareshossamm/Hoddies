@@ -3,7 +3,6 @@ import './Home.css'; // Updated CSS file
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
-import heroImage from './IMGS/Heero.webp'; // Replace with your image path
 
 function Hero() {
   useEffect(() => {
@@ -23,32 +22,47 @@ function Hero() {
 
   return (
     <section className="hero-section">
-      {/* Geometric Shape Fixed Behind Image */}
-      <div className="background-shape"></div>
-
-      <div className="hero-container">
-        {/* Left Section */}
-        <div className="hero-left" data-aos="fade-right">
-          <h1 className="hero-title">
-            <span className="highlight">Discover</span> Cerca Hoodies
-          </h1>
-          <p className="hero-description">
-            Step into comfort and style. Cerca hoodies redefine what it means to stay cozy and fashionable. 🔥✨
-          </p>
-          <div className="hero-buttons">
-            <Link to="/products" className="hero-btn primary">
-            Shop the Collection 🛍️
-            </Link>
-
-          </div>
+      {/* Hero Content */}
+      <div className="hero-content" data-aos="fade-up">
+        <h1 className="hero-title">
+          <span className="highlight">Get</span> 20% OFF Your First Order!
+        </h1>
+        <p className="hero-description">
+          Don't miss out on this exclusive offer! Upgrade your wardrobe with the trendiest hoodies. 
+          Limited-time offer – act fast! 🔥
+        </p>
+        <div className="hero-buttons">
+          <Link to="/products" className="hero-btn primary">
+            Shop Now 🛍️
+          </Link>
         </div>
+      </div>
 
-        {/* Right Section */}
-        <div className="hero-right" data-aos="fade-left">
-          <div className="image-wrapper">
-            <img src={heroImage} alt="Premium Hoodie" className="hero-image" />
-          </div>
-        </div>
+      {/* Discount Badge */}
+      <div className="discount-badge" data-aos="zoom-in">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="300"
+          height="300"
+          viewBox="0 0 300 300"
+          fill="none"
+        >
+          <circle cx="150" cy="150" r="140" fill="#ff4081" />
+          <circle cx="150" cy="150" r="120" fill="white" />
+          <text
+            x="50%"
+            y="50%"
+            textAnchor="middle"
+            stroke="#ff4081"
+            strokeWidth="2px"
+            dy=".3em"
+            fontSize="48"
+            fontWeight="bold"
+            fill="#ff4081"
+          >
+            20% OFF
+          </text>
+        </svg>
       </div>
     </section>
   );

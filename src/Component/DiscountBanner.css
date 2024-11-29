@@ -1,7 +1,6 @@
 /* Dark Theme Styling */
 body{
     background-color: #191529;
-    height: 100vh;
 }
 .discount-banner.dark-theme {
     display: flex;
